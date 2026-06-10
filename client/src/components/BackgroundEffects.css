@@ -1,0 +1,109 @@
+.stars-background,
+.hexagon-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.stars-background {
+  z-index: 0;
+  pointer-events: auto;
+  background:
+    radial-gradient(ellipse at bottom, rgba(38, 38, 38, 0.6) 0%, rgba(0, 0, 0, 0.22) 100%),
+    radial-gradient(ellipse 35% 45% at 85% 35%, rgba(185, 145, 94, 0.06), transparent 70%),
+    rgba(8, 5, 15, 0.18);
+}
+
+.star-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2000px;
+}
+
+.star-layer-dots {
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.star-layer-dots-repeat {
+  top: 2000px;
+}
+
+.stars-pointer-none {
+  pointer-events: none;
+}
+
+.hexagon-background {
+  z-index: 0;
+  pointer-events: auto;
+  background:
+    radial-gradient(ellipse 42% 55% at 7% 52%, rgba(175, 210, 250, 0.1), transparent 72%),
+    radial-gradient(ellipse 36% 46% at 90% 78%, rgba(185, 145, 94, 0.09), transparent 72%),
+    rgba(8, 5, 15, 0.18);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+}
+
+.hexagon-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 10, 28, 0.5), rgba(8, 5, 15, 0.9));
+}
+
+.hexagon-grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.62;
+}
+
+.hexagon-row {
+  display: inline-flex;
+}
+
+.hexagon-cell {
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon-cell::before,
+.hexagon-cell::after {
+  content: "";
+  position: absolute;
+  clip-path: inherit;
+  transition: background 1s ease, opacity 1s ease;
+}
+
+.hexagon-cell::before {
+  inset: 0;
+  background: rgba(175, 210, 250, 0.16);
+}
+
+.hexagon-cell::after {
+  inset: var(--hexagon-margin);
+  background: rgba(8, 5, 15, 0.88);
+}
+
+.hexagon-cell:hover::before {
+  background: rgba(175, 210, 250, 0.34);
+  transition-duration: 0s;
+}
+
+.hexagon-cell:hover::after {
+  background: rgba(17, 12, 30, 0.92);
+  transition-duration: 0s;
+}
+
+.hexagon-cell-active::before {
+  background: rgba(185, 145, 94, 0.42);
+  box-shadow: 0 0 24px rgba(175, 210, 250, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-layer {
+    animation: none;
+  }
+}
