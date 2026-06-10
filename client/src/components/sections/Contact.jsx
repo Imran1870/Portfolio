@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiGithub, FiLinkedin, FiSend, FiCheck, FiX } from 'react-icons/fi';
-import axios from 'axios';
+import { FiMail, FiGithub, FiLinkedin, FiSend, FiCheck } from 'react-icons/fi';
 import ShapeGrid from '../ShapeGrid';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const CONTACT_EMAIL = 'imranahmad@gmail.com'; // ← your email here
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -32,7 +31,7 @@ function FieldError({ msg }) {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [status, setStatus] = useState('idle'); // idle | success
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -47,7 +46,7 @@ export default function Contact() {
     return e;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -55,14 +54,14 @@ export default function Contact() {
       return;
     }
     setErrors({});
-    setStatus('loading');
-    
-    try {
-      await axios.post(`${API_URL}/api/contact`, form);
-      setStatus('success');
-    } catch {
-      setStatus('error');
-    }
+
+    // Open default mail client pre-filled — no backend needed
+    const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`);
+    setStatus('success');
   };
 
   const handleChange = (e) => {
@@ -253,22 +252,17 @@ export default function Contact() {
               <button
                 type="submit"
                 id="contact-submit"
-                disabled={status === 'loading'}
                 className="btn-cta"
-                style={{ alignSelf: 'flex-start', opacity: status === 'loading' ? 0.7 : 1 }}
+                style={{ alignSelf: 'flex-start' }}
               >
-                {status === 'loading' ? (
-                  <>Sending...</>
-                ) : status === 'success' ? (
-                  <><FiCheck size={16} /> Sent!</>
-                ) : status === 'error' ? (
-                  <><FiX size={16} /> Failed – try again</>
+                {status === 'success' ? (
+                  <><FiCheck size={16} /> Email opened!</>
                 ) : (
                   <><FiSend size={16} /> Send Message</>
                 )}
               </button>
 
-              {/* Toast Messages */}
+              {/* Success toast */}
               {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
@@ -283,25 +277,7 @@ export default function Contact() {
                     color: '#4ade80',
                   }}
                 >
-                  ✓ Message received! I'll get back to you soon.
-                </motion.div>
-              )}
-
-              {status === 'error' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  style={{
-                    background: 'rgba(248,113,113,0.1)',
-                    border: '1px solid rgba(248,113,113,0.3)',
-                    borderRadius: '8px',
-                    padding: '10px 14px',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    color: '#f87171',
-                  }}
-                >
-                  ✕ Something went wrong. Please try again or email me directly.
+                  ✓ Your email app should have opened. Send it from there!
                 </motion.div>
               )}
             </form>
