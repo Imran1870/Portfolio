@@ -14,13 +14,13 @@ const terminalLines = [
   { prompt: null,            value: 'Imran Ahmad' },
   { prompt: '> education',   value: null },
   { prompt: null,            value: 'B.Tech CSE – PEC (Punjab Engineering College)' },
-  { prompt: null,            value: "3rd Year | Expected 2026" },
+  { prompt: null,            value: "3rd Year " },
   { prompt: '> currently',   value: null },
-  { prompt: null,            value: 'Cracking DSA for campus placements' },
+  { prompt: null,            value: 'Practicing DSA for placements' },
   { prompt: null,            value: 'Building MERN + Gen AI projects' },
-  { prompt: null,            value: 'Learning LangChain.js, RAG, AI Agents' },
+  { prompt: null,            value: 'Learning LangChain, RAG, AI Agents' },
   { prompt: '> interests',   value: null },
-  { prompt: null,            value: 'Full-Stack Dev · AI/ML · System Design' },
+  { prompt: null,            value: 'Full-Stack Dev · GEN-AI · System Design' },
 ];
 
 const containerVariants = {

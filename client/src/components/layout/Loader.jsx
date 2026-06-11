@@ -291,7 +291,7 @@ export default function Loader({ onComplete }) {
                       textTransform: 'uppercase',
                     }}
                   >
-                    CSE &apos;26 &nbsp;·&nbsp; PEC
+                    CSE &apos;28 &nbsp;·&nbsp; PEC
                   </motion.div>
                 </motion.div>
               )}

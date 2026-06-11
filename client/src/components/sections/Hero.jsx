@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { FiGithub, FiLinkedin, FiTwitter, FiExternalLink, FiDownload } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiExternalLink, FiDownload } from 'react-icons/fi';
 import RippleGrid from '../effects/RippleGrid';
 import BorderGlow from '../effects/BorderGlow';
 import heroPhoto from '../../assets/photo.png';
@@ -160,9 +160,9 @@ export default function Hero() {
           {/* Social Icons */}
           <motion.div {...fadeUp} style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
             {[
-              { Icon: FiGithub,   href: 'https://github.com/imran-ahmad',     label: 'GitHub' },
-              { Icon: FiLinkedin, href: 'https://linkedin.com/in/imran-ahmad', label: 'LinkedIn' },
-              { Icon: FiTwitter,  href: 'https://twitter.com/imranahmad',      label: 'Twitter' },
+              { Icon: FiGithub,   href: 'https://github.com/Imran1870',     label: 'GitHub' },
+              { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/imran-ahmad-6931b6311/', label: 'LinkedIn' },
+              { Icon: FiMail,     href: 'mailto:imran.ahmad@pecchd.ac.in', label: 'Email' },
             ].map(({ Icon, href, label }) => (
               <motion.a
                 key={label}
@@ -248,7 +248,7 @@ export default function Hero() {
 
               {/* Stat Pills */}
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                {['10+ Projects', 'DSA: Intermediate'].map((label) => (
+                {['5+ Projects', 'DSA: Intermediate'].map((label) => (
                   <span key={label} className="pill" style={{ fontSize: '11px' }}>
                     {label}
                   </span>

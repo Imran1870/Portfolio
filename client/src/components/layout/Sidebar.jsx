@@ -124,7 +124,7 @@ export default function Sidebar({ activeSection, isOpen, onClose }) {
     } else if (cmd === 'pwd') {
       nextLines.push({ type: 'output', text: `/portfolio/${getCurrentSection()}` });
     } else if (cmd === 'help') {
-      nextLines.push({ type: 'output', text: 'commands: ls, pwd, cd <section>, clear, whoami, open github, exit' });
+      nextLines.push({ type: 'output', text: 'commands: ls, pwd, cd <section>, clear, whoami, rm, rmdir, open github, exit' });
     } else if (cmd === 'whoami') {
       nextLines.push({ type: 'output', text: 'Imran Ahmad - full-stack developer' });
     } else if (cmd === 'exit') {
