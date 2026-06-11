@@ -2,11 +2,10 @@ import { motion } from 'framer-motion';
 import {
   SiPython, SiJavascript, SiTypescript, SiCplusplus, SiC,
   SiReact, SiHtml5, SiCss, SiTailwindcss, SiBootstrap,
-  SiNodedotjs, SiExpress, SiFastapi, SiFlask, SiDjango,
-  SiMongodb, SiMysql, SiPostgresql, SiRedis, SiFirebase,
-  SiDocker, SiLinux, SiGnubash,
-  SiGit, SiGithub, SiVscodium, SiFigma, SiPostman,
-  SiJupyter, SiVercel,
+  SiNodedotjs, SiExpress, SiFastapi, 
+  SiMongodb, SiMysql,  SiRedis, SiFirebase,
+   SiLinux, SiGnubash,
+  SiGit, SiGithub, SiVscodium, SiFigma,  SiVercel,
 } from 'react-icons/si';
 import { FaAws, FaWindows } from 'react-icons/fa';
 import SoftAurora from '../effects/SoftAurora';
@@ -16,7 +15,7 @@ const skillGroups = [
     skills: [
       { name: 'Python', Icon: SiPython, color: '#3776AB' },
       { name: 'JavaScript', Icon: SiJavascript, color: '#F7DF1E' },
-      { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+      
       { name: 'C', Icon: SiC, color: '#A8B9CC' },
       { name: 'C++', Icon: SiCplusplus, color: '#00599C' },
     ],
@@ -37,8 +36,7 @@ const skillGroups = [
       { name: 'Node.js', Icon: SiNodedotjs, color: '#339933' },
       { name: 'Express', Icon: SiExpress, color: '#FEFAEF' },
       { name: 'FastAPI', Icon: SiFastapi, color: '#009688' },
-      { name: 'Flask', Icon: SiFlask, color: '#FEFAEF' },
-      { name: 'Django', Icon: SiDjango, color: '#092E20' },
+     
     ],
   },
   {
@@ -46,7 +44,6 @@ const skillGroups = [
     skills: [
       { name: 'MongoDB', Icon: SiMongodb, color: '#47A248' },
       { name: 'MySQL', Icon: SiMysql, color: '#4479A1' },
-      { name: 'PostgreSQL', Icon: SiPostgresql, color: '#336791' },
       { name: 'Redis', Icon: SiRedis, color: '#DC382D' },
       { name: 'Firebase', Icon: SiFirebase, color: '#FFCA28' },
     ],
@@ -54,9 +51,7 @@ const skillGroups = [
   {
     label: 'DevOps & Cloud',
     skills: [
-      { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
-      { name: 'AWS', Icon: FaAws, color: '#FF9900' },
-      { name: 'Azure', Icon: FaWindows, color: '#0078D4' },
+      
       { name: 'Linux', Icon: SiLinux, color: '#FCC624' },
       { name: 'Bash', Icon: SiGnubash, color: '#4EAA25' },
     ],
@@ -68,8 +63,7 @@ const skillGroups = [
       { name: 'GitHub', Icon: SiGithub, color: '#FEFAEF' },
       { name: 'VS Code', Icon: SiVscodium, color: '#007ACC' },
       { name: 'Figma', Icon: SiFigma, color: '#F24E1E' },
-      { name: 'Postman', Icon: SiPostman, color: '#FF6C37' },
-      { name: 'Jupyter', Icon: SiJupyter, color: '#F37626' },
+      
       { name: 'Vercel', Icon: SiVercel, color: '#FEFAEF' },
     ],
   },

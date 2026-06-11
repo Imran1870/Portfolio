@@ -48,7 +48,7 @@ export default function AboutMe() {
         padding: '6rem 4rem',
         overflow: 'hidden',
         /* AboutMe: slightly cooler / darker – transitioning away from hero */
-        background: 'linear-gradient(180deg, rgba(18,12,34,0.35) 0%, rgba(9,7,18,0.78) 100%)',
+        background: 'rgb(19, 13, 32)',
       }}
     >
       <div
@@ -111,7 +111,7 @@ export default function AboutMe() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             viewport={{ once: true }}
             style={{
-              background: '#130d20', /* Darker card variant for terminal – feels like a real terminal */
+              background: 'rgb(19,13,32)',
               borderRadius: '12px',
               border: '1px solid rgba(175,210,250,0.18)',
               padding: '1.5rem',
@@ -212,8 +212,9 @@ export default function AboutMe() {
               viewport={{ once: true }}
               style={{
                 background: 'linear-gradient(135deg, rgb(76 91 146) -8%, rgb(40, 25, 62) 100%)',
+                
                 borderRadius: '12px',
-                border: '1px solid rgba(175,210,250,0.2)',
+                border: '1.2px solid #f6f6a6',
                 padding: '1.5rem',
               }}
             >
@@ -224,37 +225,24 @@ export default function AboutMe() {
                   color: '#AFD2FA',
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
-                  marginBottom: '0.75rem',
+                  marginBottom: '0.85rem',
                 }}
               >
-                 Education
+                Identity
               </div>
-              <div
+              <p
                 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontWeight: 500,
-                  fontSize: '1rem',
-                  color: '#FEFAEF',
-                  marginBottom: '0.4rem',
+                  fontFamily: 'medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                  fontWeight: 600,
+                  fontSize: '0.98rem',
+                  color: 'rgba(254,250,239,0.76)',
+                  lineHeight: 1.8,
+                  margin: 0,
                 }}
               >
-                Punjab Engineering College
-              </div>
-              <div
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.88rem',
-                  color: 'rgba(254,250,239,0.65)',
-                  lineHeight: 1.7,
-                }}
-              >
-                <span style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 500 }}>
-                  B.Tech in Computer Science & Engineering
-                </span><br />
-                <span style={{ color: '#AFD2FA', fontFamily: 'JetBrains Mono, monospace', fontSize: '12px' }}>
-                  CGPA: 8.4 / 10
-                </span>
-              </div>
+                I'm Imran Ahmad, a CSE student at PEC building full-stack web apps and exploring AI tools.
+                I care about writing code that actually ships - clean, scalable, and worth using.
+              </p>
             </motion.div>
 
             {/* Currently Focused – lighter card variant */}
@@ -267,13 +255,10 @@ export default function AboutMe() {
                 background: 'linear-gradient(135deg, rgb(76 91 146) -8%, rgb(40, 25, 62) 100%)',
 
                 borderRadius: '12px',
-                border: isCurrentlyActive
-                  ? '1px solid rgba(175,210,250,0.55)'
-                  : '1px solid rgba(175,210,250,0.25)',
+                border: '1.2px solid  #f6f6a6',
+
                 padding: '1.5rem',
-                boxShadow: isCurrentlyActive
-                  ? '0 8px 32px rgba(0,0,0,0.28), 0 0 26px rgba(175,210,250,0.16)'
-                  : '0 4px 20px rgba(0,0,0,0.25)',
+               
                 transform: isCurrentlyActive ? 'translateY(-2px)' : 'translateY(0)',
                 transition: 'border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease',
               }}
@@ -285,44 +270,24 @@ export default function AboutMe() {
                   color: '#AFD2FA',
                   letterSpacing: '2px',
                   textTransform: 'uppercase',
-                  marginBottom: '0.75rem',
+                  marginBottom: '0.85rem',
                 }}
               >
-                Currently Focused On
+                Drive
               </div>
-              <ul
+              <p
                 style={{
-                  fontFamily: 'Manrope, sans-serif',
-                  fontWeight: 500,
-                  fontSize: '0.88rem',
+                  fontFamily: 'medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+                  fontWeight: 600,
+                  fontSize: '0.98rem',
                   color: 'rgba(254,250,239,0.75)',
-                  lineHeight: 1.9,
-                  paddingLeft: 0,
-                  listStyle: 'none',
+                  lineHeight: 1.8,
+                  margin: 0,
                 }}
               >
-                {[
-                  'DSA prep for campus placements',
-                  'Deepening MERN stack expertise',
-                  'Gen AI with LangChain.js & RAG',
-                  'System Design fundamentals',
-                  'Building AI-powered web apps',
-                ].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                    <span
-                      style={{
-                        color: '#B9915E',
-                        fontFamily: 'JetBrains Mono, monospace',
-                        fontSize: '11px',
-                        marginTop: '4px',
-                      }}
-                    >
-                      ‣
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+                I'm deep in DSA for placements, sharpening my MERN backend, and exploring the Gen AI
+                space through LangChain and RAG pipelines. I learn by building and deploying.
+              </p>
             </motion.div>
           </div>
         </div>

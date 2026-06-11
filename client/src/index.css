@@ -1,6 +1,7 @@
 /* Tailwind directives removed — project uses plain CSS */
 
 /* ─── Prevent white flash before React mounts ─────── */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Chela+One&family=Faculty+Glyphic&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Science+Gothic:wght@100..900&family=Trade+Winds&display=swap');
 html {
   background-color: #050210;
   scroll-behavior: smooth;

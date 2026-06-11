@@ -85,20 +85,23 @@ export default function Hero() {
           {/* Name */}
           <motion.h1
             {...fadeUp}
-            style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontWeight: 400,
-              fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-              background: 'linear-gradient(135deg, #FEFAEF 0%, #d4c9ff 60%, #AFD2FA 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              lineHeight: 1.05,
-              letterSpacing: 0,
-              margin: 0,
-            }}
-          >
+           style={{
+  fontFamily: '"Science Gothic", system-ui, sans-serif',
+  fontWeight: 400,
+  fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+  background: 'linear-gradient(135deg, #FEFAEF 0%, #d4c9ff 60%, #AFD2FA 100%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  
+  // Adjusted line-height slightly since Bangers is vertically dense
+  lineHeight: 1.1, 
+  
+  // Optional: Makes the punchy text edges look razor sharp
+  letterSpacing: '0.03em', 
+}}         >
             Imran Ahmad
+
           </motion.h1>
 
           {/* Typewriter */}
