@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
-import TargetCursor from '../TargetCursor';
-import DotField from '../DotField';
+import TargetCursor from '../effects/TargetCursor';
+import DotField from '../effects/DotField';
 
 const projects = [
   {

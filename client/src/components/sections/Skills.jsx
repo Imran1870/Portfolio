@@ -9,7 +9,7 @@ import {
   SiJupyter, SiVercel,
 } from 'react-icons/si';
 import { FaAws, FaWindows } from 'react-icons/fa';
-import SoftAurora from '../SoftAurora';
+import SoftAurora from '../effects/SoftAurora';
 const skillGroups = [
   {
     label: 'Languages',

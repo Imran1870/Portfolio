@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SiReact } from 'react-icons/si';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 import { FiX } from 'react-icons/fi';
-import { useSidebarResize } from '../hooks/useSidebarResize';
-import StarsBackground from './StarsBackground';
+import { useSidebarResize } from '../../hooks/useSidebarResize';
+import StarsBackground from '../effects/StarsBackground';
 
 const FILES = [
   { id: 'main', label: 'main.jsx', section: 'main' },

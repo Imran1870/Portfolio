@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import StarsBackground from '../StarsBackground';
+import StarsBackground from '../effects/StarsBackground';
 
 const achievements = [
   {

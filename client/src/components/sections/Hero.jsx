@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FiGithub, FiLinkedin, FiTwitter, FiExternalLink, FiDownload } from 'react-icons/fi';
-import RippleGrid from '../RippleGrid';
-import BorderGlow from '../BorderGlow';
+import RippleGrid from '../effects/RippleGrid';
+import BorderGlow from '../effects/BorderGlow';
 import heroPhoto from '../../assets/photo.png';
 
 const fadeUp = {

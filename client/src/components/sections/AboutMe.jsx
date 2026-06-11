@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import LightRays from '../LightRays';
+import LightRays from '../effects/LightRays';
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },

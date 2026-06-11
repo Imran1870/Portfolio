@@ -1,8 +1,8 @@
 import { Suspense, lazy, useEffect, useRef, useState, Component } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { FiMenu } from 'react-icons/fi';
-import Loader from './components/Loader';
-import Sidebar from './components/Sidebar';
+import Loader from './components/layout/Loader';
+import Sidebar from './components/layout/Sidebar';
 import { useActiveSection } from './hooks/useActiveSection';
 
 const Hero        = lazy(() => import('./components/sections/Hero'));

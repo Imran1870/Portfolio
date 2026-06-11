@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiCheck } from 'react-icons/fi';
-import ShapeGrid from '../ShapeGrid';
+import ShapeGrid from '../effects/ShapeGrid';
 
 const CONTACT_EMAIL = 'imranahmad@gmail.com'; // ← your email here
 
