@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiSend, FiCheck } from 'react-icons/fi';
 import ShapeGrid from '../effects/ShapeGrid';
 
-const CONTACT_EMAIL = 'imranahmad@gmail.com'; // ← your email here
+const CONTACT_EMAIL = 'imranahmad250106@gmail.com'; // ← your email here
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -146,9 +146,9 @@ export default function Contact() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { Icon: FiMail, label: 'imran.ahmad@pecchd.ac.in', href: 'mailto:imran.ahmad@pecchd.ac.in' },
-                { Icon: FiGithub, label: 'github.com/imran-ahmad', href: 'https://github.com/imran-ahmad' },
-                { Icon: FiLinkedin, label: 'linkedin.com/in/imran-ahmad', href: 'https://linkedin.com/in/imran-ahmad' },
+                { Icon: FiMail, label: 'imranahmad250106@gmail.com', href: 'mailto:imranahmad250106@gmail.com' },
+                { Icon: FiGithub, label: 'github.com/Imran1870', href: 'https://github.com/Imran1870' },
+                { Icon: FiLinkedin, label: 'linkedin.com/in/imran-ahmad', href: 'https://linkedin.com/in/imran-ahmad-6931b6311' },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
@@ -196,11 +196,11 @@ export default function Contact() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
             style={{
-              background: 'linear-gradient(145deg, #1e1530 0%, #170f28 100%)',
-              border: '1px solid rgba(175,210,250,0.18)',
+              background: 'linear-gradient(145deg, rgba(2,2,4,0.96) 0%, rgba(0,0,0,0.98) 100%)',
+              border: '1px solid rgba(255,255,255,0.82)',
               borderRadius: '16px',
               padding: '2rem',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08), 0 0 28px rgba(255,255,255,0.08)',
             }}
           >
             <form onSubmit={handleSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -213,7 +213,7 @@ export default function Contact() {
                   placeholder="Your Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="form-input"
+                  className="form-input contact-form-input"
                   style={{ borderColor: errors.name ? '#f87171' : undefined }}
                 />
                 {errors.name && <FieldError msg={errors.name} />}
@@ -228,7 +228,7 @@ export default function Contact() {
                   placeholder="your@email.com"
                   value={form.email}
                   onChange={handleChange}
-                  className="form-input"
+                  className="form-input contact-form-input"
                   style={{ borderColor: errors.email ? '#f87171' : undefined }}
                 />
                 {errors.email && <FieldError msg={errors.email} />}
@@ -243,7 +243,7 @@ export default function Contact() {
                   rows={5}
                   value={form.message}
                   onChange={handleChange}
-                  className="form-input"
+                  className="form-input contact-form-input"
                   style={{
                     resize: 'vertical',
                     borderColor: errors.message ? '#f87171' : undefined,

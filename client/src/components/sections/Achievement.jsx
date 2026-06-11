@@ -151,15 +151,13 @@ export default function Achievement() {
                       transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
                       viewport={{ once: true, margin: '-60px' }}
                       style={{
-                        background: 'linear-gradient(135deg, rgba(42,31,66,0.85) 0%, rgba(31,22,53,0.85) 100%)',
-                        border: '1px solid rgba(175,210,250,0.18)',
-                        borderRadius: '12px',
-                        padding: '1.25rem',
-                        textAlign: 'right',
-                        boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
-                        backdropFilter: 'blur(12px)',
-                        WebkitBackdropFilter: 'blur(12px)',
-                      }}
+  background: 'rgba(130, 119, 213, 0.35)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderTop: '3px solid #CAA068 ',
+  borderRadius: '12px',
+  padding: '1.25rem',
+  boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+}}
                     >
                       <AchievementContent item={item} align="right" />
                     </motion.div>
@@ -194,15 +192,15 @@ export default function Achievement() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
                       viewport={{ once: true, margin: '-60px' }}
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(32,21,53,0.85) 0%, rgba(24,15,40,0.85) 100%)',
-                        border: '1px solid rgba(175,210,250,0.14)',
-                        borderRadius: '12px',
-                        padding: '1.25rem',
-                        boxShadow: '0 4px 24px rgba(0,0,0,0.45)',
-                        backdropFilter: 'blur(12px)',
-                        WebkitBackdropFilter: 'blur(12px)',
-                      }}
+                     style={{
+  background: 'rgba(130, 119, 213, 0.35)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderTop: '3px solid #C99F67 ',
+  borderRadius: '12px',
+  padding: '1.25rem',
+  textAlign: 'right',
+  boxShadow: '0 4px 24px rgba(0,0,0,0.4)',
+}}
                     >
                       <AchievementContent item={item} align="left" />
                     </motion.div>
