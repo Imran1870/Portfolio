@@ -14,7 +14,9 @@ const RippleGrid = ({
   opacity = 1.0,
   gridRotation = 0,
   mouseInteraction = true,
-  mouseInteractionRadius = 1
+  mouseInteractionRadius = 1,
+  idleRippleIntensity = rippleIntensity,
+  animationSpeed = 1
 }) => {
   const containerRef = useRef(null);
   const mousePositionRef = useRef({ x: 0.5, y: 0.5 });
@@ -57,6 +59,7 @@ uniform vec2 iResolution;
 uniform bool enableRainbow;
 uniform vec3 gridColor;
 uniform float rippleIntensity;
+uniform float idleRippleIntensity;
 uniform float gridSize;
 uniform float gridThickness;
 uniform float fadeDistance;
@@ -88,7 +91,7 @@ void main() {
 
     float dist = length(uv);
     float func = sin(pi * (iTime - dist));
-    vec2 rippleUv = uv + uv * func * rippleIntensity;
+    vec2 rippleUv = uv + uv * func * idleRippleIntensity;
 
     if (mouseInteraction && mouseInfluence > 0.0) {
         vec2 mouseUv = (mousePosition * 2.0 - 1.0);
@@ -150,6 +153,7 @@ void main() {
       enableRainbow: { value: enableRainbow },
       gridColor: { value: hexToRgb(gridColor) },
       rippleIntensity: { value: rippleIntensity },
+      idleRippleIntensity: { value: idleRippleIntensity },
       gridSize: { value: gridSize },
       gridThickness: { value: gridThickness },
       fadeDistance: { value: fadeDistance },
@@ -203,7 +207,7 @@ void main() {
 
     let animId;
     const render = t => {
-      uniforms.iTime.value = t * 0.001;
+      uniforms.iTime.value = t * 0.001 * animationSpeed;
 
       const lerpFactor = 0.1;
       mousePositionRef.current.x += (targetMouseRef.current.x - mousePositionRef.current.x) * lerpFactor;
@@ -249,6 +253,7 @@ void main() {
     uniformsRef.current.enableRainbow.value = enableRainbow;
     uniformsRef.current.gridColor.value = hexToRgb(gridColor);
     uniformsRef.current.rippleIntensity.value = rippleIntensity;
+    uniformsRef.current.idleRippleIntensity.value = idleRippleIntensity;
     uniformsRef.current.gridSize.value = gridSize;
     uniformsRef.current.gridThickness.value = gridThickness;
     uniformsRef.current.fadeDistance.value = fadeDistance;
@@ -261,7 +266,7 @@ void main() {
   }, [
     enableRainbow, gridColor, rippleIntensity, gridSize, gridThickness,
     fadeDistance, vignetteStrength, glowIntensity, opacity, gridRotation,
-    mouseInteraction, mouseInteractionRadius
+    mouseInteraction, mouseInteractionRadius, idleRippleIntensity
   ]);
 
   return <div ref={containerRef} className="ripple-grid-container" />;

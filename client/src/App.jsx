@@ -1,5 +1,6 @@
-import { Suspense, lazy, useRef, useState, Component } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState, Component } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { FiMenu } from 'react-icons/fi';
 import Loader from './components/Loader';
 import Sidebar from './components/Sidebar';
 import { useActiveSection } from './hooks/useActiveSection';
@@ -61,8 +62,23 @@ function Divider() {
 
 export default function App() {
   const [loaderDone, setLoaderDone] = useState(hasSeenLoader());
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768);
+  const wasMobileRef = useRef(window.innerWidth < 768);
   const contentRef = useRef(null);
-  const activeSection = useActiveSection(contentRef);
+  const activeSection = useActiveSection(contentRef, loaderDone);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile !== wasMobileRef.current) {
+        setSidebarOpen(!isMobile);
+        wasMobileRef.current = isMobile;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleLoaderComplete = () => {
     sessionStorage.setItem('loader-seen', 'true');
@@ -76,14 +92,31 @@ export default function App() {
       </AnimatePresence>
 
       {loaderDone && (
-        <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+        <div className="app-shell">
+          {!sidebarOpen && (
+            <button
+              className="sidebar-toggle"
+              type="button"
+              aria-label="Open sidebar"
+              title="Open sidebar"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <FiMenu size={18} />
+            </button>
+          )}
+
           <ErrorBoundary>
-            <Sidebar activeSection={activeSection} contentRef={contentRef} />
+            <Sidebar
+              activeSection={activeSection}
+              isOpen={sidebarOpen}
+              onClose={() => setSidebarOpen(false)}
+            />
           </ErrorBoundary>
 
           <main
             ref={contentRef}
             id="content-area"
+            className="content-area"
             style={{
               flex: 1,
               overflowY: 'auto',

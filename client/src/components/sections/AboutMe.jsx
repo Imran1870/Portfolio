@@ -40,6 +40,7 @@ export default function AboutMe() {
   return (
     <section
       id="aboutme"
+      className="portfolio-section about-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -88,13 +89,14 @@ export default function AboutMe() {
         }}
       />
 
-      <div style={{ width: '100%', maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div className="section-inner" style={{ width: '100%', maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Heading */}
         <motion.div {...fadeUp} style={{ marginBottom: '3rem' }}>
           <h2 className="section-title">About Me</h2>
         </motion.div>
 
         <div
+          className="about-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
@@ -209,7 +211,7 @@ export default function AboutMe() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
               viewport={{ once: true }}
               style={{
-                background: 'linear-gradient(135deg, #2a1f42 0%, #221839 100%)',
+                background: 'linear-gradient(135deg, rgb(76 91 146) -8%, rgb(40, 25, 62) 100%)',
                 borderRadius: '12px',
                 border: '1px solid rgba(175,210,250,0.2)',
                 padding: '1.5rem',
@@ -262,7 +264,8 @@ export default function AboutMe() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
               viewport={{ once: true }}
               style={{
-                background: 'linear-gradient(135deg, #32255a 0%, #28193e 100%)',
+                background: 'linear-gradient(135deg, rgb(76 91 146) -8%, rgb(40, 25, 62) 100%)',
+
                 borderRadius: '12px',
                 border: isCurrentlyActive
                   ? '1px solid rgba(175,210,250,0.55)'

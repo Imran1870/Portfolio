@@ -23,6 +23,7 @@ export default function Hero() {
   return (
     <section
       id="main"
+      className="hero-section"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -36,16 +37,18 @@ export default function Hero() {
       {/* ─── RippleGrid WebGL background ─── */}
       <RippleGrid
         enableRainbow={false}
-        gridColor="#5227FF"
-        rippleIntensity={0.11}
-        gridSize={20}
-        gridThickness={37}
+        gridColor="#6f58d9"
+        rippleIntensity={0.13}
+        idleRippleIntensity={0.07}
+        animationSpeed={1.2}
+        gridSize={22}
+        gridThickness={30}
         mouseInteraction
-        mouseInteractionRadius={1}
+        mouseInteractionRadius={1.9}
         opacity={1}
-        fadeDistance={1.3}
-        vignetteStrength={2.2}
-        glowIntensity={0.55}
+        fadeDistance={1.45}
+        vignetteStrength={1.85}
+        glowIntensity={0.86}
         gridRotation={0}
       />
 
@@ -61,6 +64,7 @@ export default function Hero() {
       />
 
       <div
+        className="hero-layout"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr auto',
@@ -90,7 +94,7 @@ export default function Hero() {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               lineHeight: 1.05,
-              letterSpacing: '-0.02em',
+              letterSpacing: 0,
               margin: 0,
             }}
           >
@@ -178,6 +182,7 @@ export default function Hero() {
 
         {/* — RIGHT COLUMN – Avatar Card with BorderGlow — */}
         <motion.div
+          className="hero-card-wrap"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}

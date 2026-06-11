@@ -43,6 +43,7 @@ export default function Achievement() {
   return (
     <section
       id="achievement"
+      className="portfolio-section achievement-section"
       style={{
         minHeight: '100vh',
         padding: '6rem 4rem',
@@ -104,7 +105,7 @@ export default function Achievement() {
         }}
       />
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
+      <div className="section-inner achievement-inner" style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
         {/* Heading */}
         <motion.div {...fadeUp} style={{ marginBottom: '3.5rem' }}>
           <h2 className="section-title">Achievements</h2>
@@ -113,8 +114,9 @@ export default function Achievement() {
         {/* Timeline */}
         <div style={{ position: 'relative' }}>
           {/* Central line – gradient so it fades at top & bottom */}
-          <div
-            style={{
+            <div
+              className="achievement-line"
+              style={{
               position: 'absolute',
               left: '50%',
               transform: 'translateX(-50%)',
@@ -133,6 +135,7 @@ export default function Achievement() {
               return (
                 <div
                   key={i}
+                  className="achievement-row"
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr auto 1fr',
@@ -142,6 +145,7 @@ export default function Achievement() {
                   {/* Left card or spacer */}
                   {isLeft ? (
                     <motion.div
+                      className="achievement-card"
                       initial={{ opacity: 0, x: -40 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
@@ -166,6 +170,7 @@ export default function Achievement() {
                   {/* Center dot */}
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <motion.div
+                      className="achievement-card"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.4, ease: 'backOut', delay: i * 0.1 }}
@@ -217,6 +222,8 @@ export default function Achievement() {
 function AchievementContent({ item, align }) {
   return (
     <div
+      className="achievement-content"
+      data-align={align}
       style={{
         display: 'flex',
         flexDirection: 'column',

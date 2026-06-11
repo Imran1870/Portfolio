@@ -80,6 +80,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      className="portfolio-section projects-section"
       style={{
         minHeight: '100vh',
         padding: '6rem 4rem',
@@ -138,13 +139,14 @@ export default function Projects() {
         }}
       />
 
-      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div className="section-inner" style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <motion.div {...fadeUp} style={{ marginBottom: '3rem' }}>
           <h2 className="section-title">Projects</h2>
         </motion.div>
 
         {/* Grid Container */}
         <motion.div
+          className="projects-grid"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}

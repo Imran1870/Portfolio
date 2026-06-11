@@ -84,13 +84,14 @@ export default function Skills() {
   return (
     <section
       id="skills"
+      className="portfolio-section skills-section"
       style={{
         minHeight: '100vh',
         padding: '6rem 4rem',
         position: 'relative',
         overflow: 'hidden',
         /* Skills: darkest content section — aurora pops against the deep bg */
-        background: 'linear-gradient(180deg, rgba(14,10,28,0.6) 0%, rgba(10,7,18,0.8) 100%)',
+        background: 'linear-gradient(180deg, rgba(5,3,13,0.98) 0%, rgba(9,5,18,0.98) 100%)',
       }}
     >
          {/* Aurora Background — cool blue tones over the dark bg */}
@@ -98,9 +99,9 @@ export default function Skills() {
        
         speed={0.25}
         scale={1.6}
-        brightness={0.45}
-        color1="#6da8d4"
-        color2="#2a1f42"
+        brightness={0.68}
+        color1="#8ec7f3"
+        color2="#4d3a86"
         noiseFrequency={2.2}
         noiseAmplitude={0.75}
         bandHeight={0.45}
@@ -111,7 +112,7 @@ export default function Skills() {
         enableMouseInteraction={false}
         mouseInfluence={0}
       />
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto' }}>
+      <div className="section-inner" style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto' }}>
         {/* Heading */}
         <motion.div {...fadeUp} style={{ marginBottom: '3rem' }}>
           <h2 className="section-title">Skills</h2>

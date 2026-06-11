@@ -61,12 +61,14 @@ export default function Contact() {
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     );
     window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`);
+    setForm({ name: '', email: '', message: '' });
     setStatus('success');
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((p) => ({ ...p, [name]: value }));
+    if (status === 'success') setStatus('idle');
     if (errors[name]) {
       setErrors((p) => ({ ...p, [name]: undefined }));
     }
@@ -82,6 +84,7 @@ export default function Contact() {
         overflow: 'hidden',
         background: 'linear-gradient(180deg, rgba(8,5,18,0.92) 0%, rgba(4,2,10,0.96) 100%)',
       }}
+      className="portfolio-section contact-section"
     >
       {/* ── ShapeGrid Background ── */}
       <ShapeGrid
@@ -105,13 +108,14 @@ export default function Contact() {
         }}
       />
 
-      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div className="section-inner" style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Heading */}
         <motion.div {...fadeUp} style={{ marginBottom: '3rem' }}>
           <h2 className="section-title">Get In Touch</h2>
         </motion.div>
 
         <div
+          className="contact-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1.2fr',
