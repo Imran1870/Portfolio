@@ -216,8 +216,8 @@ export default function Hero() {
               {/* Avatar Photo */}
               <div
                 style={{
-                  width: '120px',
-                  height: '120px',
+                  width: '190px',
+                  height: '190px',
                   borderRadius: '50%',
                   border: '2.5px solid rgba(175,210,250,0.45)',
                   boxShadow: '0 0 28px rgba(110,159,212,0.3)',
